@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <script language="javascript" type="text/javascript">
+      
+	function check(){
+	    var pword = document.myForm.pass.value;
+	    var dat = new Date();
+	    
+          if ( pword.length < 8 ) {
+              document.getElementById("errors").innerHTML = "Password must be at least 8 characters";
+	    document.getElementById("errors").className = "red";
+          } else if ( document.myForm.bday.value >= '2002-02-14' ) {
+              document.getElementById("errors").innerHTML = "Minors are not Allowed!";
+	    document.getElementById("errors").className = "red";
+          } else {
+              document.getElementById("errors").innerHTML = "Hooray! Your account has been successfully created.";
+              document.getElementById("errors").className = "green";
+          }
+      }
+    </script>
+    <title>Registration Form</title>
+      <style>
+      .red {
+        color: red;
+        }
+        .green {
+            color: green;
+        }
+      </style>
+</head>
+
+<body>
+    <h1>
+        Registration Form
+    </h1>
+    <form name="myForm">
+        First Name:
+        <input type="text" name="fname"> <br>
+        Last Name:
+        <input type="text" name="lname"> <br>
+        Nick Name:
+        <input type="text" name="nname"> <br>
+        Email:
+        <input type="email" name="mail"> <br>
+        Password:
+        <input type="password" name="pass"> <br>
+        Date of Birth:
+        <input type="date" name="bday"> <br>
+        Gender:
+        <input type="radio" value="male">
+        <label for="male">Male</label>
+        <input type="radio" value="female">
+        <label for="female">Female</label> <br>
+        Mobile:
+        <input type="text" id="mobile"> <br>
+        Address:
+        <textarea id="address"></textarea> <br>
+          <input type="button" value="Submit"onclick="check()"></button><input type="reset">
+          <p id="errors"></p>
+    </form>
+</body>
+
+</html>
